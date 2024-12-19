@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ricky on Rails
+title: Rick on Rails
 email: playmaverick@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Sharing my experience on Ruby on Rails
@@ -34,6 +34,7 @@ plugins:
   - jekyll-feed
   - jekyll-email-protect
 
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -42,15 +43,17 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - .idea/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+ - .sass-cache/
+ - .jekyll-cache/
+ - .idea/
+ - docker/
+ - docker-compose.yml
+ - gemfiles/
+ - Gemfile
+ - Gemfile.lock
+ - node_modules/
+ - vendor/bundle/
+ - vendor/cache/
+ - vendor/gems/
+ - vendor/ruby/

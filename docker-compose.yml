@@ -1,0 +1,26 @@
+volumes:
+  gems:
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: docker/Dockerfile
+    args:
+      - RUBY_VERSION=${RUBY_VERSION:-3}
+  stdin_open: true
+  tty: true
+  volumes:
+    - .:/var/gem
+    - gems:/usr/local/bundle
+# if you have multiple gemfiles (see entrypoint.sh), simply uncomment the following lines and change <gemfile_name>
+# environment:
+#  GEMFILE: <gemfile_name>
+
+services:
+  cli:
+    <<: *base
+  serve:
+    <<: *base
+    ports:
+      - 4000:4000
+    command: [ 'jekyll', 'serve', '--host', '0.0.0.0', '-l' ]
